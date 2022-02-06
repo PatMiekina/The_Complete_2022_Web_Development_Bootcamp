@@ -22,8 +22,13 @@ app.get("/", function(req, res){
 
       const temperature = weatherData.main.temp;
 
-      console.log(weatherData);
-      console.log(temperature);
+      const weatherDesctiption = weatherData.weather[0].description;
+
+      // console.log(weatherData);
+
+      // console.log(temperature);
+
+      res.send("The temperature in London is" + temp + "degrees Celsius.");
 
       // Use JSON to turn object into string with no spaces etc
       // const object = {
@@ -36,7 +41,8 @@ app.get("/", function(req, res){
     });
   })
 
-  res.send("Server is up and running");
+  // only one res.send !
+  // res.send("Server is up and running");
 
 });
 
