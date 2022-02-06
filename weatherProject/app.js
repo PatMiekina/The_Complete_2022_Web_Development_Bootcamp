@@ -32,6 +32,11 @@ app.get("/", function(req, res){
 
       res.write("<p>The weather is currently " + weatherDesctiption + ".</p>");
 
+      // insert icon
+      const iconUrl = "http://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png";
+
+      res.write("<img src=" + iconUrl + ">");
+
       res.send();
       // Use JSON to turn object into string with no spaces etc
       // const object = {
