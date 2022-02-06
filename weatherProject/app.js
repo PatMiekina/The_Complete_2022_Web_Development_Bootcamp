@@ -28,7 +28,7 @@ app.get("/", function(req, res){
 
       // console.log(temperature);
 
-      res.send("The temperature in London is" + temp + "degrees Celsius.");
+      res.send("<h1>The temperature in London is " + temperature + " degrees Celsius.</h1>");
 
       // Use JSON to turn object into string with no spaces etc
       // const object = {
@@ -39,10 +39,7 @@ app.get("/", function(req, res){
       // console.log(JSON.stringify(object));
 
     });
-  })
-
-  // only one res.send !
-  // res.send("Server is up and running");
+  });
 
 });
 
