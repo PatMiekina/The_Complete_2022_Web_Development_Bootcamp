@@ -11,8 +11,10 @@ app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+const API_KEY = process.env.MAILCHIMP_API_KEY;
+
 mailchimp.setConfig({
-  apiKey: "MY_API KEY",
+  apiKey: API_KEY,
   server: "us14"
 });
 
@@ -118,9 +120,3 @@ app.post("/failure", function(req, res) {
 app.listen(process.env.PORT || 3000, function() {
   console.log("The server is running on port 3000 http://localhost:3000/");
 });
-
-// API Key
-// 743a5d540e61c43f888cec9addba4aef-us14
-
-// Audience/List id
-// da6a2c7a44
